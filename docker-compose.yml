@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+  immudb4j-test:
+    depends_on:
+      - immudb
+    image: immudb4j-test
+    environment:
+      IMMUDB_HOST: immudb
+
+  immudb:
+    image: codenotary/immudb:latest
+    ports:
+    - 3322:3322
+    - 9497:9497
+    restart: always

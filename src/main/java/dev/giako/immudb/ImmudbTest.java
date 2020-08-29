@@ -29,8 +29,11 @@ public class ImmudbTest {
             return;
         }
 
+        String immudbHost = System.getenv("IMMUDB_HOST");
+        immudbHost = immudbHost.trim().length() > 0 ? immudbHost : "localhost";
+
         ImmuClient immuClient = ImmuClient.newBuilder()
-                .setServerUrl("localhost")
+                .setServerUrl(immudbHost)
                 .setServerPort(3322)
                 .setRootHolder(fileRootHolder)
                 .build();
