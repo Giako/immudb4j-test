@@ -32,5 +32,9 @@ Alternatively, a stand-alone Docker Compose configuration is available too.
 To run it, after issuing the `./mvnw package` command, enter:
  
 ```
+# Build the Docker image with Google Jib
+./mvwn jib:dockerBuild
+
+# Start the project and a containerized immudb instance
 docker-compose up
 ```
